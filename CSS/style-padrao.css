@@ -132,6 +132,49 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(89,5,80,1) 45%, rgba(0
 .bi-cart-x-fill{
     color:rgb(233, 6, 6);
 }
+
+.bi-search-heart{
+    color:rgb(233, 6, 6);
+    justify-content: space-between;
+    font-size: 1.25rem;
+    
+    
+    
+}
+
+#btncad{
+    margin-top: 1rem;
+}
+
+#mapa{
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    max-width: 100%;
+    border: black 3px solid;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 23rem;
+    margin-right: 23rem;   
+}
+
+.pesquisa{
+    display: flex;
+    font-size: small;
+    
+}
+ #cep{
+    display: flex;
+    
+ }
+
+
+.linkscep{
+    display: flex;
+    margin-top: 1rem;
+    
+}
+
 /*input*/
 
 #input{
@@ -199,6 +242,8 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(89,5,80,1) 45%, rgba(0
     z-index: 999;
 
 }
+
+
 
 
 
