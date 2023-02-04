@@ -5,7 +5,7 @@ btncad.addEventListener("click", function(){
     let email = document.querySelector('#email').value;
     let senha = document.querySelector('#senha').value;
     let tel = document.querySelector('#tel').value;
-    let endereco = document.querySelector('#endereco').value;
+    let cep = document.querySelector('#cep').value;
     if(nome === "") {
         alert("Nome Inválido")
     } if (email === "") {
@@ -14,8 +14,10 @@ btncad.addEventListener("click", function(){
         alert("Campo Senha Obrigatório")
     } if(tel === ""){
         alert("Telefone Inválido")
-    } if(endereco === ""){
-        alert("Endereço Inválido")
+    } if(cep === ""){
+       alert("Endereço Inválido")
+    } if(numero ===""){
+        alert("Numero da Residência Inválido")
     } else{
         document.querySelector("#mensagemOk").insertAdjacentHTML(
             "afterend",
@@ -38,6 +40,41 @@ btncad.addEventListener("click", function(){
 })
     
     
+
+function consultacep(){
+    let cep = document.querySelector("#cep").value;
+   /* if (cep.lenght != 8){
+        alert("CEP inválido, Digite os 8 digitos.");
+        return;
+    }*/
+    let url = `https://viacep.com.br/ws/${cep}/json/`;
+    fetch(url).then(function(response){
+        response.json().then(function(data){
+           // console.log(data);
+          mostrarEndereco(data);
+
+        })
+    })
+}
+    
+    function mostrarEndereco(dados){
+        
+        let ruax = document.querySelector(".rua");
+        ruax.innerHTML = dados.logradouro;
+        
+        
+        let cidadex = document.querySelector(".cidade");
+         cidadex.innerHTML = dados.localidade;
+
+        let ufx = document.querySelector(".uf");
+        ufx.innerHTML = dados.uf;
+
     
 
+        let bairrox = document.querySelector(".bairro")
+         bairrox.innerHTML = dados.bairro;
+        
+
+        
+    }
     
